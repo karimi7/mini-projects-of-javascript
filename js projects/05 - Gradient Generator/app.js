@@ -21,6 +21,8 @@ const setDirection = (direction, directionElem) => {
 
     currentDirection = direction;
 
+    generateCssCode()  // بدون اینکه بزنیم رو دکمه‌ی جنریت ، خودش آپدیت میشه
+
     // console.log(direction, directionElem, directionElem.target);
 };
 
@@ -34,7 +36,8 @@ const generateCssCode = () => {
 
 const copyCssCode = () => {
     codeTextArea.select();
-    document.execCommand('copy');
+    // document.execCommand('copy'); // قدیمی
+    navigator.clipboard.writeText(codeTextArea.value) // استاندارد و امروزی
 
     alert('Css code copied !');
 };
