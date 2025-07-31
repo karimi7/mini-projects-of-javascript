@@ -34,9 +34,9 @@ window.addEventListener('DOMContentLoaded', () => {
             activeButton.classList.add('active');
         }
     } else {
-        // if (tabButtons.length > 0 && contents.length > 0) {
+        if (tabButtons.length > 0 && contents.length > 0) {
             tabButtons[0].classList.add('active');
             contents[0].classList.add('active');
-        // }
+        }
     }
 });
