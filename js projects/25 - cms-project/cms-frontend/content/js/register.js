@@ -72,9 +72,21 @@ submitBtn.addEventListener('click', (event) => {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newUserData)
-        }).then(res => console.log(res))
+        }).then(res => {
+            console.log(res)
+            clearInput()
+        })
 
     } else {
         alert('تمامی فیلدها را درست مقداردهی کنید');
     }
 });
+
+
+function clearInput () {
+    firstnameInput.value = ''
+    lastnameInput.value = ''
+    usernameInput.value = ''
+
+    firstnameInput.focus()
+}
