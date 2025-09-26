@@ -144,6 +144,7 @@
     border: none;
     cursor: pointer;
     box-shadow: rgb(0, 156, 240, 0.4) 0px 8px 24px;
+    border-radius: 8px;
 }
 /* ! ------------------------------ all sessions ------------------------------ ! */
 .sessions {
@@ -158,6 +159,7 @@
     border: 1px solid var(--white-700);
     border-bottom: none;
     justify-content: space-between;
+    /* border-radius: 8px; */
 }
 .session-box:last-child {
     border: 1px solid var(--white-700);

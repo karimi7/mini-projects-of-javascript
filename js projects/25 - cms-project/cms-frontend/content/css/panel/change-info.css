@@ -61,6 +61,7 @@
 }
 .change-profile-input-box {
     width: 190px;
+    border-radius: 8px;
 }
 .change-profile-input-box::before, .change-banner-input-box::before {
     position: absolute;
@@ -93,9 +94,11 @@
     height: 100%;
     object-fit: cover;
     outline: 1px solid var(--primary-color);
+    border-radius: 8px;
 }
 .change-banner-input-box {
     width: 80%;
+    border-radius: 8px;
 }
 .submit-change-info-box {
     position: relative;
@@ -124,6 +127,7 @@
     border: none;
     cursor: pointer;
     box-shadow: rgb(0, 156, 240, 0.4) 0px 8px 24px;
+    border-radius: 8px;
 }
 .submit-change-info-btn-overlay {
     padding: 15px;

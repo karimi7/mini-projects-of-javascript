@@ -41,4 +41,5 @@ body {
     max-width: 955px;
     box-shadow: var(--shadow);
     background-color: var(--white);
+    border-radius: 10px;
 }

@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    border-radius: 12px;
 }
 .profile-container {
     display: flex;
@@ -16,6 +17,8 @@
 .admin-profile {
     width: 70px;
     height: 70px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .admin-profile img {
     width: 100%;
@@ -47,6 +50,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border-radius: 10px;
 }
 .detail-btn:not(:first-child) {
     margin-left: 25px;
@@ -71,6 +75,7 @@
     background: var(--green);
     padding: 3px 5px;
     transform: translate(5px, -5px);
+    border-radius: 20px;
 }
 .sign-out-btn {
     background: var(--blue);

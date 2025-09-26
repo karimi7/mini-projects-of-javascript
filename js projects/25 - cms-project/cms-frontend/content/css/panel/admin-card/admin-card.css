@@ -4,6 +4,8 @@
     max-height: 615px;
     box-shadow: var(--shadow);
     background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
 }
 .admin-card-profile-container {
     height: 180px;
@@ -31,11 +33,13 @@
     opacity: 0.6;
     transform: scale(1.13);
     z-index: -1;
+    border-radius: 8px;
 }
 .admin-profile-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 8px;
 }
 .admin-information-container {
     text-align: center;
@@ -83,6 +87,7 @@
     margin-top: 20px;
     box-shadow: rgb(0, 156, 240, 0.4) 0px 8px 24px;
     cursor: pointer;
+    border-radius: 8px;
 }
 .change-info-btn svg {
     margin-right: 15px;

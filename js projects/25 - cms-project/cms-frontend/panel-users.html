@@ -11,16 +11,21 @@
 </head>
 <body>
     <!-- ! -------------------------------- modal -------------------------------- ! -->
-    <div class="modal-container"> <!-- ! add visible class to be visible ! -->
+    <div class="modal-container remove-modal"> <!-- ! add visible class to be visible ! -->
         <div class="modal-content">
             <!-- ! remove user content ! -->
-            <!-- <h1 class="modal-title">are you sure you want delete this user ?</h1>
+            <h1 class="modal-title">are you sure you want delete this user ?</h1>
             <div class="btn-groups">
-                <button class="unaccept-btn">No</button>
-                <button class="accept-btn">Yes</button>
-            </div> -->
+                <button class="unaccept-btn" onclick="closeModal()">No</button>
+                <button class="accept-btn" onclick="removeUser()">Yes</button>
+            </div>
+        </div>
+    </div>
 
             <!-- ! edit information of user content ! -->
+    <div class="modal-container edit-modal"> <!-- ! add visible class to be visible ! -->
+        <div class="modal-content">
+            <span onclick="closeEditModal()" class="x-modal">X</span>
             <h1 class="modal-title">Fill out the following fields for edit the user</h1>
             <form action="" class="edit-user-form">
                 <!-- ! ---------------------------- edit username ---------------------------- ! -->
@@ -68,7 +73,7 @@
                     </h3>
                 </div>
 
-                <button type="submit" class="accept-btn mt-3">update information</button>
+                <button onclick="updateUser(event)" type="submit" class="accept-btn mt-3">update information</button>
             </form>
         </div>
     </div>
@@ -196,33 +201,33 @@
                     <!-- ! ---------------------------- users section ---------------------------- ! -->
                     <div class="users-wrap">
                         <!-- ! ------------------------------ user-box ------------------------------ ! -->
-                        <div class="user-box">
+                        <!-- <div class="user-box">
                             <div class="user-box_left">
                                 <img src="content/img/profile/banana.png" class="user-profile-box" alt="">
                                 <div class="user-detail">
                                     <h1 class="user-id">
-                                        <span>Banana <!-- username --> </span>
-                                        <span class="user-history"> 1400/5/03 <!-- history --> </span>
+                                        <span>Banana</span>
+                                        <span class="user-history">1400/5/03</span>
                                     </h1>
-                                    <h3 class="user-name">Arash Karimi <!-- user name (first name and last name) --> </h3>
+                                    <h3 class="user-name">Arash Karimi</h3>
                                 </div>
                             </div>
 
                             <div class="user-btns-group">
-                                <!-- ! ------------------------------ edit btn ------------------------------- ! -->
                                 <button class="user-edit-btn">
                                     edit
                                 </button>
-                                <!-- ! ----------------------------- remove btn ------------------------------ ! -->
                                 <button class="user-remove-btn">
                                     remove
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>
         </main>
     </div>
+
+    <script src="./content/js/users.js"></script>
 </body>
 </html>

@@ -10,10 +10,12 @@
     transition: .4s;
     z-index: 9999;
 }
+
 .modal-container.visible {
     visibility: visible;
     opacity: 1;
 }
+
 .modal-container::before {
     content: '';
     position: fixed;
@@ -22,12 +24,16 @@
     opacity: 0.6;
     background-color: #080909;
 }
+
 .modal-content {
     width: 450px;
     background-color: var(--white);
     z-index: 1;
     padding: 30px 40px;
+    border-radius: 10px;
+    position: relative;
 }
+
 .modal-title {
     text-align: left;
     font-size: 1.5rem;
@@ -35,11 +41,14 @@
     line-height: 35px;
     text-transform: capitalize;
 }
+
 .btn-groups {
     display: flex;
     column-gap: 20px;
 }
-.accept-btn, .unaccept-btn {
+
+.accept-btn,
+.unaccept-btn {
     width: 100%;
     padding: 15px 0;
     border: none;
@@ -47,20 +56,46 @@
     font-size: 1.1rem;
     cursor: pointer;
     transition: .4s;
+    border-radius: 8px;
 }
+
 .accept-btn {
     background-color: var(--blue);
     color: var(--white);
 }
+
 .accept-btn:hover {
     filter: brightness(.7);
 }
+
 .unaccept-btn {
     background-color: transparent;
     border: 1px solid var(--blue);
     color: var(--blue);
 }
+
 .unaccept-btn:hover {
     background-color: var(--blue);
     color: var(--white);
+}
+
+
+
+
+.x-modal {
+    position: absolute;
+    right: 23px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    transition: all 400ms ease;
+}
+
+.x-modal:hover{
+    color: red;
 }

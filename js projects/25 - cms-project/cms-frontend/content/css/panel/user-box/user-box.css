@@ -6,6 +6,7 @@
     outline: 1px solid var(--white-700);
     margin-top: 20px;
     transition: .4s;
+    border-radius: 8px;
 }
 .user-box:hover {
     box-shadow: var(--shadow);
@@ -20,6 +21,7 @@
     object-fit: cover;
     margin: 0 20px 0 10px;
     outline: var(--golden-border);
+    border-radius: 8px;
 }
 .user-detail {
     color: var(--primary-color);
@@ -49,6 +51,7 @@
 }
 .user-edit-btn {
     background-color: var(--blue);
+    border-radius: 8px;
 }
 .user-edit-btn, .user-remove-btn {
     cursor: pointer;
@@ -64,6 +67,7 @@
 }
 .user-remove-btn {
     background-color: var(--main-color);
+    border-radius: 8px;
 }
 .user-edit-btn:hover, .user-remove-btn:hover {
     filter: brightness(0.9);
