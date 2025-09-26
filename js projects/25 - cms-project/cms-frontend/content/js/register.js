@@ -55,8 +55,7 @@ usernameInput.addEventListener('keyup', () => {
 });
 
 submitBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    // console.log('submit shod');
+    // event.preventDefault();
 
     if (firstnameValid && lastnameValid && usernameValid) {
         let newUserData = {
