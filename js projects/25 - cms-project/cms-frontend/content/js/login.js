@@ -13,10 +13,12 @@ adminLoginBtn.addEventListener('click', (event) => {
 
     fetch(`http://localhost:3000/api/admins`)
         .then((res) => {
+            console.log(res);
+            
             res.json();
         })
         .then((admins) => {
-            console.log(admins);
+            // console.log(admins);
 
             let isAdmin = admins.some((admin) => {
                 return (
@@ -24,5 +26,19 @@ adminLoginBtn.addEventListener('click', (event) => {
                     admin.password === adminPassword
                 );
             });
+            console.log(isAdmin);
+
+            if (isAdmin) {
+                location.href = 'http://127.0.0.1:53407/cms-frontend/panel-users.html';
+                clearInput()
+            } else {
+                alert('اطلاعات شما به عنوان مدیر سایت صحیح نمیباشد');
+                clearInput()
+            }
         });
 });
+
+function clearInput() {
+    usernameInput.value = '';
+    passwordInput.value = '';
+}
