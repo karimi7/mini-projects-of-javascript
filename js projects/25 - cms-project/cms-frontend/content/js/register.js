@@ -89,3 +89,6 @@ function clearInput () {
 
     firstnameInput.focus()
 }
+
+
+console.log();
