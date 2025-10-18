@@ -1,0 +1,23 @@
+@import "../reset/Reset.css";
+
+.parallax {
+    padding: 1rem;
+    text-align: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('/public/image/cta-bg.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bigtitle {
+    margin-top: 5rem;
+    font-size: 1.5rem;
+}
+
+.bigtitle span {
+    color: #ffc451;
+}
+
+.intro {
+    font-size: 1.3rem;
+}
