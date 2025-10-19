@@ -1,0 +1,12 @@
+@import "../reset/Reset.css";
+
+.headerBox {
+    width: 180px;
+    height: 180px;
+    padding: 0.5rem;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

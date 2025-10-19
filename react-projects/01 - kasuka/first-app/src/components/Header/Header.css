@@ -21,3 +21,10 @@
 .intro {
     font-size: 1.3rem;
 }
+
+.headerBoxes{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
