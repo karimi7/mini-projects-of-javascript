@@ -51,3 +51,9 @@
     background-color: #ffc451;
     color: #333;
 }
+
+@media only screen and (max-width: 720px) {
+    .nav-menu{
+        display: none;
+    }
+}
