@@ -22,10 +22,16 @@
     font-size: 1.3rem;
 }
 
-.headerBoxes{
+.headerBoxes {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 2rem;
+}
+
+@media only screen and (max-width: 340px) {
+    .bigtitle {
+        font-size: 1rem;
+    }
 }

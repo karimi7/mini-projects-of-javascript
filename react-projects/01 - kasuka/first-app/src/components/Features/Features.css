@@ -55,3 +55,9 @@
         text-align: center;
     }
 }
+
+@media only screen and (max-width: 998px) {
+    .featureMain {
+        text-align: center;
+    }
+}

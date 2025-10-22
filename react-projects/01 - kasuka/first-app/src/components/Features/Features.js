@@ -4,7 +4,7 @@ import SingleFeature from './SingleFeature.js';
 function Features() {
     return (
         <div>
-            <div className="container">
+            <div className="container featureMain">
                 <h2 className="featuresTitle">Features</h2>
                 <div className="feature-items">
                     <div className="feature-img">

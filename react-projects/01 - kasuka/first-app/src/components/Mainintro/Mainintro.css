@@ -36,6 +36,7 @@
 .about-logos {
     width: 100%;
     display: flex;
+    gap: 1rem;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -61,5 +62,17 @@
 
     .about-des {
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .about-logos {
+        padding: 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .about-logos {
+        justify-content: center;
     }
 }
