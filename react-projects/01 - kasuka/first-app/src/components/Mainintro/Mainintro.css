@@ -33,7 +33,7 @@
     border-radius: 8px;
 }
 
-.about-logos{
+.about-logos {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -45,14 +45,21 @@
     .about {
         flex-direction: column;
     }
+
     .about-des {
         width: 100%;
     }
-    .about-text{
+
+    .about-text {
         text-align: center;
     }
-    .about-img{
-        width: 60%;
+
+    .about-img {
+        width: 80%;
         margin: 0 auto;
+    }
+
+    .about-des {
+        text-align: center;
     }
 }

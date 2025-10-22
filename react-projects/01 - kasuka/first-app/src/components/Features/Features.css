@@ -1,0 +1,57 @@
+@import "../reset/Reset.css";
+
+.featuresTitle {
+    margin-top: 3rem;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.feature-items {
+    display: flex;
+    gap: 3rem;
+    color: #333;
+}
+
+.feature-img {
+    width: 50%;
+    border-radius: 8px;
+}
+
+.feature-img img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.feature-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 998px) {
+    .feature-items {
+        flex-wrap: wrap;
+    }
+
+    .feature-img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .feature-item {
+        flex-wrap: wrap;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+
+    }
+
+    .featuresMain {
+        text-align: center;
+    }
+}
