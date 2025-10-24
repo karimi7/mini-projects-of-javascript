@@ -23,7 +23,7 @@ class Temp extends Component {
             return { temp: prevState.temp + 1 };
         });
 
-        if (this.state.temp >= 15) {
+        if (this.state.temp >= 14) {
             this.setState({ tempClass: 'hot' });
         }
     }
@@ -45,12 +45,8 @@ class Temp extends Component {
     render() {
         return (
             <div className="app-container">
-                <div className="temperature-display-container">
-                    <div
-                        className={`temperature-display ${this.state.tempClass}`}
-                    >
-                        {this.state.temp}°C
-                    </div>
+                <div className={`temperature-display ${this.state.tempClass}`}>
+                    {this.state.temp}°C
                 </div>
                 <div className="button-container">
                     <button onClick={this.addToTemp}>+</button>
