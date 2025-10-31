@@ -1,10 +1,12 @@
 import './App.css';
-import Form from './components/Form/Form';
+import FormClass from './components/Form/Form-class';
+import FormFunc from './components/Form/Form-func';
 
 function App() {
     return (
         <div>
-            <Form />
+            <FormClass />
+            {/* <FormFunc /> */}
         </div>
     );
 }

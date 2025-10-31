@@ -42,7 +42,7 @@ body {
     border-radius: 8px;
     opacity: 1;
     transition: all 1s ease;
-    top: 0;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
@@ -50,7 +50,7 @@ body {
 
 .hide {
     opacity: 0;
-    top: 20px;
+    top: -20px;
 }
 
 .form-field {

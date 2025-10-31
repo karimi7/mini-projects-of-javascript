@@ -1,8 +1,10 @@
-import React from 'react';
 import './Form.css';
 
 //  WITH CLASS :
-export default class Form extends React.Component {
+
+import React from 'react';
+
+export default class FormClass extends React.Component {
     constructor(props) {
         super(props);
 
@@ -95,7 +97,7 @@ export default class Form extends React.Component {
                     (this.state.allValid &&
                         this.state.firstNameData.length < 3) ? (
                         <span id="first-name-error">
-                            Please enter a first name
+                            Please enter your firstname
                         </span>
                     ) : null}
                     <input
@@ -113,7 +115,7 @@ export default class Form extends React.Component {
                     (this.state.allValid &&
                         this.state.lastNameData.length < 3) ? (
                         <span id="first-name-error">
-                            Please enter a first name
+                            Please enter your lastname
                         </span>
                     ) : null}
                     <input
@@ -130,7 +132,7 @@ export default class Form extends React.Component {
                         this.state.emailData.length < 3) ||
                     (this.state.allValid && this.state.emailData.length < 3) ? (
                         <span id="first-name-error">
-                            Please enter a first name
+                            Please enter your email
                         </span>
                     ) : null}
                     <button className="form-field" type="submit">
