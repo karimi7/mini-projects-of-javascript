@@ -1,6 +1,7 @@
 import React from 'react';
 import './Form.css';
 
+//  WITH CLASS :
 export default class Form extends React.Component {
     constructor(props) {
         super(props);
@@ -37,16 +38,14 @@ export default class Form extends React.Component {
 
     submitHandler(event) {
         event.preventDefault();
-        this.setState({
-            submitted: true,
-        });
+
         if (
-            this.state.firstNameData.length > 3 &&
-            this.state.lastNameData.length > 3 &&
-            this.state.emailData.length > 3
+            this.state.firstNameData.length >= 3 &&
+            this.state.lastNameData.length >= 3 &&
+            this.state.emailData.length >= 3
         ) {
             this.setState({
-                allValid: true,
+                submitted: true,
             });
 
             setTimeout(() => {
@@ -54,6 +53,12 @@ export default class Form extends React.Component {
                     hideSuccess: true,
                 });
             }, 2000);
+        } else {
+            this.setState({
+                allValid: true,
+                hideSuccess: false,
+                submitted: false,
+            });
         }
     }
 
@@ -85,12 +90,14 @@ export default class Form extends React.Component {
                         name="firstName"
                     />
                     {/* Uncomment the next line to show the error message */}
-                    {this.state.submitted &&
-                        this.state.firstNameData.length < 3 && (
-                            <span id="first-name-error">
-                                Please enter a first name
-                            </span>
-                        )}
+                    {(this.state.submitted &&
+                        this.state.firstNameData.length < 3) ||
+                    (this.state.allValid &&
+                        this.state.firstNameData.length < 3) ? (
+                        <span id="first-name-error">
+                            Please enter a first name
+                        </span>
+                    ) : null}
                     <input
                         onChange={(event) => this.lastNameHandler(event)}
                         value={this.state.lastNameData}
@@ -101,12 +108,14 @@ export default class Form extends React.Component {
                         name="lastName"
                     />
                     {/* Uncomment the next line to show the error message */}
-                    {this.state.submitted &&
-                        this.state.lastNameData.length < 3 && (
-                            <span id="last-name-error">
-                                Please enter a last name
-                            </span>
-                        )}
+                    {(this.state.submitted &&
+                        this.state.lastNameData.length < 3) ||
+                    (this.state.allValid &&
+                        this.state.lastNameData.length < 3) ? (
+                        <span id="first-name-error">
+                            Please enter a first name
+                        </span>
+                    ) : null}
                     <input
                         onChange={(event) => this.emailHandler(event)}
                         value={this.state.emailData}
@@ -117,12 +126,13 @@ export default class Form extends React.Component {
                         name="email"
                     />
                     {/* Uncomment the next line to show the error message */}
-                    {this.state.submitted &&
-                        this.state.emailData.length < 3 && (
-                            <span id="email-error">
-                                Please enter an email address
-                            </span>
-                        )}
+                    {(this.state.submitted &&
+                        this.state.emailData.length < 3) ||
+                    (this.state.allValid && this.state.emailData.length < 3) ? (
+                        <span id="first-name-error">
+                            Please enter a first name
+                        </span>
+                    ) : null}
                     <button className="form-field" type="submit">
                         Register
                     </button>
