@@ -1,10 +1,10 @@
-export default function Book() {
+export default function Book(props) {
     return (
         <>
             <tr>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th>{props.title}</th>
+                <th>{props.auther}</th>
+                <th>{props.year}</th>
             </tr>
         </>
     );
