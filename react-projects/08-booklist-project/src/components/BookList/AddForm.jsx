@@ -1,4 +1,3 @@
-import './AddForm.css';
 import Book from './Book';
 import React, { useState } from 'react';
 
@@ -80,6 +79,7 @@ export default function AddForm() {
                 </div>
 
                 <input
+                    style={{ width: '100%' }}
                     id="btn"
                     type="submit"
                     value="Add Book"
