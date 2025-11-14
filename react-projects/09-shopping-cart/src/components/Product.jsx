@@ -1,12 +1,17 @@
-export default function Product() {
+export default function Product(props) {
+    const AddToCartHandler = (id) => {
+        props.onAddProduct(id);
+    };
+
     return (
         <>
             <div className="shop-item">
-                <span className="shop-item-title">Shirt</span>
-                <img className="shop-item-image" src="images/Shirt.png" />
+                <span className="shop-item-title">{props.title}</span>
+                <img className="shop-item-image" src={props.img} />
                 <div className="shop-item-details">
-                    <span className="shop-item-price">$129</span>
+                    <span className="shop-item-price">$ {props.price}</span>
                     <button
+                        onClick={() => AddToCartHandler(props.id)}
                         type="button"
                         className="btn btn-primary shop-item-button"
                     >

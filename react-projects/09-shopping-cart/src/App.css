@@ -55,7 +55,7 @@ body {
 
 .main-header {
     background-color: rgba(0, 0, 0, .6);
-    background-image: url("components/images/Header-Background.jpg");
+    background-image: url("public/images/Header-Background.jpg");
     background-blend-mode: multiply;
     background-size: cover;
     padding-bottom: 30px;
@@ -221,6 +221,7 @@ body {
 
 .shop-item-image {
     height: 250px;
+    border-radius: 12px;
 }
 
 .shop-item-details {
@@ -282,7 +283,7 @@ body {
 .cart-item-image {
     width: 75px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .btn-danger {
