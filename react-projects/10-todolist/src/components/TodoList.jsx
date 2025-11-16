@@ -13,28 +13,65 @@ export default function TodoList() {
 
         setTodoTitle(event.target.value);
     };
-    
+
     const addTodo = (event) => {
         event.preventDefault();
         setTodoTitle(event.target.value);
 
-        if (!setTodoTitle('')) {
+        // if (setTodoTitle['']) {
+        // }
+
+        let newTodoObject = {
+            id: todos.length + 1,
+            title: todoTitle,
+            completed: false,
+        };
+
+        setTodos([...todos, newTodoObject]);
+        setTodoTitle('');
+    };
+
+    const enterTodoHandler = (event) => {
+        setTodoTitle(event.target.value);
+        if (event.code === 'Enter') {
+            event.preventDefault();
             let newTodoObject = {
                 id: todos.length + 1,
                 title: todoTitle,
                 completed: false,
             };
-
             setTodos([...todos, newTodoObject]);
-
             setTodoTitle('');
         }
+    };
+
+    const removeTodo = (todoID) => {
+        console.log(todoID);
+        let newTodos = todos.filter((todo) => {
+            return todo.id !== todoID;
+        });
+        setTodos([...newTodos]);
+        console.log(newTodos);
+    };
+
+    const changeTodo = (todoID) => {
+        console.log(todoID);
+
+        // let newTodos = [...todos];
+
+        todos.forEach((todo) => {
+            if (todo.id === todoID) {
+                todo.completed = !todo.completed;
+            }
+        });
+
+        // console.log(newTodos);
     };
 
     return (
         <>
             <Header />
-            <form onSubmit={addTodo}>
+            <form onSubmit={addTodo} onKeyPress={() => enterTodoHandler(event)}>
                 <input
                     onChange={todoTitleHandler}
                     value={todoTitle}
@@ -59,7 +96,12 @@ export default function TodoList() {
             <div className="todo-container">
                 <ul className="todo-list">
                     {todos.map((todo) => (
-                        <Todo {...todo} key={todo.id} />
+                        <Todo
+                            {...todo}
+                            onRemove={removeTodo}
+                            onChange={changeTodo}
+                            key={todo.id}
+                        />
                     ))}
                 </ul>
             </div>
