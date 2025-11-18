@@ -76,6 +76,7 @@ form button:hover {
   background: white;
   font-size: 1.5rem;
   transition: all 0.5s ease;
+  border-radius: 8px;
 }
 
 form input,
@@ -83,8 +84,24 @@ form input,
   color: rgb(88, 87, 87);
 }
 
+.todo-input {
+  border-radius: 8px 0 0 8px;
+}
+
+.todo-button {
+  border-radius: 0 8px 8px 0;
+}
+
+.filter-todo {
+  border-radius: 8px;
+}
+
 .todo li {
   flex: 1;
+}
+
+.trash-btn {
+  border-radius: 0 8px 8px 0;
 }
 
 .trash-btn,
@@ -162,9 +179,10 @@ select {
   background: rgba(74, 21, 110, 1);
   top: 0;
   right: 0;
-  padding: 1.2rem;
+  padding: 1.1rem;
   pointer-events: none;
   transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
 .select:hover::after {

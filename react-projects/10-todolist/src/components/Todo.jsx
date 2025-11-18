@@ -1,7 +1,7 @@
 export default function Todo(props) {
     const checkHandler = (id) => {
         // console.log('check');
-        props.onChange(id)
+        props.onChange(id);
     };
 
     const removeHandler = (id) => {

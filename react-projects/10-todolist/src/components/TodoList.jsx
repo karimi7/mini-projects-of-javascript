@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function TodoList() {
     const [todos, setTodos] = useState([]);
     const [todoTitle, setTodoTitle] = useState('');
-    // const [status, setStatus] = useState('all');
+    const [status, setStatus] = useState('all');
 
     const todoTitleHandler = (event) => {
         console.log(event.target.value);
@@ -46,26 +46,25 @@ export default function TodoList() {
     };
 
     const removeTodo = (todoID) => {
-        console.log(todoID);
         let newTodos = todos.filter((todo) => {
             return todo.id !== todoID;
         });
         setTodos([...newTodos]);
-        console.log(newTodos);
     };
 
     const changeTodo = (todoID) => {
-        console.log(todoID);
-
-        // let newTodos = [...todos];
-
         todos.forEach((todo) => {
             if (todo.id === todoID) {
                 todo.completed = !todo.completed;
             }
         });
+        setTodos([...todos]);
+    };
 
-        // console.log(newTodos);
+    const statusHandler = (event) => {
+        console.log(event.target.value);
+
+        setStatus(event.target.value);
     };
 
     return (
@@ -85,7 +84,11 @@ export default function TodoList() {
                 </button>
 
                 <div className="select">
-                    <select name="todos" className="filter-todo">
+                    <select
+                        onChange={statusHandler}
+                        name="todos"
+                        className="filter-todo"
+                    >
                         <option value="all">All</option>
                         <option value="completed">Completed</option>
                         <option value="uncompleted">Uncompleted</option>
@@ -95,14 +98,39 @@ export default function TodoList() {
 
             <div className="todo-container">
                 <ul className="todo-list">
-                    {todos.map((todo) => (
-                        <Todo
-                            {...todo}
-                            onRemove={removeTodo}
-                            onChange={changeTodo}
-                            key={todo.id}
-                        />
-                    ))}
+                    {status === 'uncompleted' &&
+                        todos
+                            .filter((todo) => !todo.completed)
+                            .map((todo) => (
+                                <Todo
+                                    {...todo}
+                                    onRemove={removeTodo}
+                                    onChange={changeTodo}
+                                    key={todo.id}
+                                />
+                            ))}
+
+                    {status === 'completed' &&
+                        todos
+                            .filter((todo) => todo.completed)
+                            .map((todo) => (
+                                <Todo
+                                    {...todo}
+                                    onRemove={removeTodo}
+                                    onChange={changeTodo}
+                                    key={todo.id}
+                                />
+                            ))}
+
+                    {status === 'all' &&
+                        todos.map((todo) => (
+                            <Todo
+                                {...todo}
+                                onRemove={removeTodo}
+                                onChange={changeTodo}
+                                key={todo.id}
+                            />
+                        ))}
                 </ul>
             </div>
         </>
