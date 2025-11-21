@@ -18,9 +18,6 @@ export default function TodoList() {
         event.preventDefault();
         setTodoTitle(event.target.value);
 
-        // if (setTodoTitle['']) {
-        // }
-
         let newTodoObject = {
             id: todos.length + 1,
             title: todoTitle,
@@ -32,16 +29,8 @@ export default function TodoList() {
     };
 
     const enterTodoHandler = (event) => {
-        setTodoTitle(event.target.value);
         if (event.code === 'Enter') {
-            event.preventDefault();
-            let newTodoObject = {
-                id: todos.length + 1,
-                title: todoTitle,
-                completed: false,
-            };
-            setTodos([...todos, newTodoObject]);
-            setTodoTitle('');
+            addTodo();
         }
     };
 
