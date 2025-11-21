@@ -3,7 +3,7 @@ import ColorBox from './ColorBox';
 import React, { useState } from 'react';
 
 export default function NoteApp() {
-    const [colors, setColors] = useState([
+    const [colors] = useState([
         '#fff',
         '#FFD37F',
         '#FFFA81',
@@ -55,6 +55,7 @@ export default function NoteApp() {
     };
 
     const removeNote = (noteID) => {
+        
         // Way  1 :
         let newNotes = notes.filter((note) => {
             return note.id !== noteID;
