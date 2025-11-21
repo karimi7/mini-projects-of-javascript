@@ -34,8 +34,6 @@ export default function NoteApp() {
     };
 
     const addNote = () => {
-        console.log('s');
-
         let newNotesObject = {
             id: notes.length + 1,
             title: noteTitle,
@@ -50,97 +48,119 @@ export default function NoteApp() {
         setInputColor('#fff');
     };
 
+    const pressHandler = (event) => {
+        if (event.code === 'Enter') {
+            addNote();
+        }
+    };
+
+    const removeNote = (noteID) => {
+        // Way  1 :
+        let newNotes = notes.filter((note) => {
+            return note.id !== noteID;
+        });
+        setNotes([...newNotes]);
+
+        // Way 2 :
+        // let newNotes = [...notes]
+        // let mainNoteIndex = newNotes.findIndex(note => {
+        //     return note.id === noteID
+        // })
+        // newNotes.splice(mainNoteIndex, 1)
+        // setNotes([...newNotes])
+    };
+
     return (
         <>
-            <>
-                <div>
-                    <section id="home">
-                        <div className="container">
-                            <div className="header upper">
-                                My React Note App
-                            </div>
+            <div>
+                <section id="home">
+                    <div className="container">
+                        <div className="header upper">My React Note App</div>
 
-                            <br />
-                            <br />
-                            <div className="flex row-gt-sm">
-                                <div className="flex flex-50-gt-sm">
-                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
-                                        <input
-                                            value={noteTitle}
-                                            onChange={() => {
-                                                noteTitleHandler(event);
-                                            }}
-                                            id="input-field"
-                                            className="form-control"
-                                            type="text"
-                                            style={{
-                                                backgroundColor: inputColor,
-                                            }}
-                                            placeholder="Something here..."
-                                        />
-                                    </div>
-                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
-                                        <div id="color-select">
-                                            {colors.map((color) => (
-                                                <ColorBox
-                                                    color={color}
-                                                    key={color}
-                                                    onColor={inputColorHandler}
-                                                />
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto my-1 text-right">
-                                        <button
-                                            onClick={() => {
-                                                addNote();
-                                            }}
-                                            id="btn-save"
-                                            type="button"
-                                            className="btn btn-outline-info"
-                                        >
-                                            <span className="fa fa-plus"></span>
-                                        </button>
-                                        <button
-                                            onClick={() => {
-                                                emptyNoteTitle();
-                                            }}
-                                            id="btn-delete"
-                                            type="button"
-                                            className="btn btn-outline-danger"
-                                        >
-                                            <span
-                                                id="btn-icon"
-                                                className="fa fa-eraser"
-                                            ></span>
-                                        </button>
+                        <br />
+                        <br />
+                        <div className="flex row-gt-sm">
+                            <div className="flex flex-50-gt-sm">
+                                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
+                                    <input
+                                        value={noteTitle}
+                                        onChange={() => {
+                                            noteTitleHandler(event);
+                                        }}
+                                        onKeyDown={() => {
+                                            pressHandler(event);
+                                        }}
+                                        id="input-field"
+                                        className="form-control"
+                                        type="text"
+                                        style={{
+                                            backgroundColor: inputColor,
+                                        }}
+                                        placeholder="Something here..."
+                                    />
+                                </div>
+                                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
+                                    <div id="color-select">
+                                        {colors.map((color) => (
+                                            <ColorBox
+                                                color={color}
+                                                key={color}
+                                                onColor={inputColorHandler}
+                                            />
+                                        ))}
                                     </div>
                                 </div>
+                                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto my-1 text-right">
+                                    <button
+                                        onClick={() => {
+                                            addNote();
+                                        }}
+                                        id="btn-save"
+                                        type="button"
+                                        className="btn btn-outline-info"
+                                    >
+                                        <span className="fa fa-plus"></span>
+                                    </button>
+                                    <button
+                                        onClick={() => {
+                                            emptyNoteTitle();
+                                        }}
+                                        id="btn-delete"
+                                        type="button"
+                                        className="btn btn-outline-danger"
+                                    >
+                                        <span
+                                            id="btn-icon"
+                                            className="fa fa-eraser"
+                                        ></span>
+                                    </button>
+                                </div>
                             </div>
+                        </div>
 
-                            <div className="flex row-gt-sm">
-                                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                    <div className="container">
-                                        <div className="row">
-                                            <div
-                                                id="listed"
-                                                className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 p-3 card-columns"
-                                            >
-                                                {notes.map((note) => (
-                                                    <Note
-                                                        {...note}
-                                                        key={note.id}
-                                                    />
-                                                ))}
-                                            </div>
+                        <div className="flex row-gt-sm">
+                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <div className="container">
+                                    <div className="row">
+                                        <div
+                                            id="listed"
+                                            className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 p-3 card-columns"
+                                        >
+                                            {notes.map((note) => (
+                                                <Note
+                                                    {...note}
+                                                    key={note.id}
+                                                    onRemove={removeNote}
+                                                />
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                </div>
-            </>
+                    </div>
+                </section>
+            </div>
         </>
     );
 }
