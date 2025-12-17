@@ -16,16 +16,16 @@ export default function TodoList() {
 
     const addTodo = (event) => {
         event.preventDefault();
-        setTodoTitle(event.target.value);
-
-        let newTodoObject = {
-            id: todos.length + 1,
-            title: todoTitle,
-            completed: false,
-        };
-
-        setTodos([...todos, newTodoObject]);
-        setTodoTitle('');
+        if (todoTitle.length > 0) {
+            setTodoTitle(event.target.value);
+            let newTodoObject = {
+                id: todos.length + 1,
+                title: todoTitle,
+                completed: false,
+            };
+            setTodos([...todos, newTodoObject]);
+            setTodoTitle('');
+        }
     };
 
     const enterTodoHandler = (event) => {
@@ -51,7 +51,7 @@ export default function TodoList() {
     };
 
     const statusHandler = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
 
         setStatus(event.target.value);
     };
