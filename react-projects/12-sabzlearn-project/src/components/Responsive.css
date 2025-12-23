@@ -1,0 +1,34 @@
+.courses-responsive {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 5rem;
+    gap: 1rem;
+}
+
+.row-responsive {
+    display: flex;
+}
+
+.col-responsive {
+    width: 50%;
+}
+
+.col-responsive img {
+    width: 80%;
+}
+
+@media (max-width:998px) {
+
+    .col-responsive {
+        width: 100%;
+    }
+
+    .col-responsive img {
+        width: 100%;
+    }
+
+    .row-responsive {
+        flex-wrap: wrap;
+    }
+}
