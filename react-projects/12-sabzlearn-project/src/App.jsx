@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Courses from './components/Courses';
 import MainCourse from './components/MainCourse';
 import MainPage from './components/mainPage';
-import AboutPage from './components/AboutPage';
+import AboutPage from './components/About/AboutPage';
 
 export default function App() {
     return (
@@ -13,7 +13,7 @@ export default function App() {
                 <Route path="/" element={<MainPage />} />
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/course/:courseID" element={<MainCourse />} />
-                <Route path="/about" element={<AboutPage />} />
+                <Route path="/about/*" element={<AboutPage />} />
             </Routes>
         </>
     );
