@@ -19,6 +19,9 @@ export default function Header() {
                         <Link to="/" style={{color:'#fff', textDecoration:'none'}}>Home</Link>
                         <Link to="/courses" style={{color:'#fff', textDecoration:'none'}}>Courses</Link>
                         <Link to="/about" style={{color:'#fff', textDecoration:'none'}}>About</Link>
+                        <Link to="/login" style={{color:'#fff', textDecoration:'none'}}>Login</Link>
+                        <Link to="/panel" style={{color:'#fff', textDecoration:'none'}}>Panel</Link>
+                        <Link to="/dashboard" style={{color:'#fff', textDecoration:'none'}}>Dashboard</Link>
                     </Nav>
                 </Navbar>
             </Container>
