@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import coursesData from '../CoursesData';
 import { Container } from 'react-bootstrap';
 import './Responsive.css';
+import './style.css'
 
 export default function MainCourse() {
     const [mainCourse] = useState(coursesData);
@@ -12,6 +13,8 @@ export default function MainCourse() {
         (course) => course.id == params.courseID
     );
     console.log(mainCoursesData);
+
+    let navigate = useNavigate()
 
     return (
         <>
@@ -27,6 +30,9 @@ export default function MainCourse() {
                         <h2>{mainCoursesData.title}</h2>
                         <br />
                         <p>{mainCoursesData.description}</p>
+                        <button onClick={() => {
+                            navigate('/login')
+                        }} className='course-btn'>خرید دوره</button>
                     </div>
                 </div>
             </Container>

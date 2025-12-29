@@ -3,3 +3,12 @@
     border-radius: 8px;
     padding-bottom: 5px;
 }
+
+.course-btn{
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
