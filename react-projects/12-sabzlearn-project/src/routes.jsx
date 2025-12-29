@@ -5,6 +5,7 @@ import AboutPage from './components/AboutPage';
 import Login from './components/Login';
 import Panel from './components/Panel';
 import Dashboard from './components/Dashboard';
+import PrivateRoute from './components/PrivateRoute';
 
 let routes = [
         { path:"/", element:<MainPage /> },
@@ -15,8 +16,10 @@ let routes = [
                 { path:"dashboard", element:<p style={{ textAlign: 'center' }}>dashboard</p>}
         ]},
         { path:"/login", element:<Login/>},
-        { path:"/panel", element:<Panel/>},
-        { path:"/dashboard", element:<Dashboard/>},
+        { path:"/*", element:<PrivateRoute/>, children:[
+                {path:'panel', element:<Panel/>},
+                {path:'dashboard', element:<Dashboard/>},
+        ]}
 ]
 
 export default routes
