@@ -1,5 +1,6 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
+import './style.css'
 
 export default function Header() {
     return (
@@ -16,12 +17,12 @@ export default function Header() {
                         </h3>
                     </Link>
                     <Nav className="me-auto" style={{display:'flex',gap:'40px'}}>
-                        <Link to="/" style={{color:'#fff', textDecoration:'none'}}>Home</Link>
-                        <Link to="/courses" style={{color:'#fff', textDecoration:'none'}}>Courses</Link>
-                        <Link to="/about" style={{color:'#fff', textDecoration:'none'}}>About</Link>
-                        <Link to="/login" style={{color:'#fff', textDecoration:'none'}}>Login</Link>
-                        <Link to="/panel" style={{color:'#fff', textDecoration:'none'}}>Panel</Link>
-                        <Link to="/dashboard" style={{color:'#fff', textDecoration:'none'}}>Dashboard</Link>
+                        <NavLink className={(link)=> link.isActive ? 'active' : ''} to="/" style={{color:'#fff', textDecoration:'none'}}>Home</NavLink>
+                        <NavLink to="/courses" style={{color:'#fff', textDecoration:'none'}}>Courses</NavLink>
+                        <NavLink to="/about" style={{color:'#fff', textDecoration:'none'}}>About</NavLink>
+                        <NavLink to="/login" style={{color:'#fff', textDecoration:'none'}}>Login</NavLink>
+                        <NavLink to="/panel" style={{color:'#fff', textDecoration:'none'}}>Panel</NavLink>
+                        <NavLink to="/dashboard" style={{color:'#fff', textDecoration:'none'}}>Dashboard</NavLink>
                     </Nav>
                 </Navbar>
             </Container>
