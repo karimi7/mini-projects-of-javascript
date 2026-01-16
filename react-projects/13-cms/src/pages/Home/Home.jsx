@@ -1,7 +1,17 @@
-import React from 'react'
+import Feature from '../../components/Features/Feature';
+import WidgetSm from '../../components/widgetSm/WidgetSm';
+import WidgetLg from '../../components/widgetLg/WidgetLg';
+import './Home.css';
 
 export default function Home() {
-  return (
-    <><h1>Home</h1></>
-  )
+    return (
+        <div className="home">
+            <Feature />
+            {/* <Chart/> */}
+            <div className="homeWidgets">
+                <WidgetSm />
+                <WidgetLg />
+            </div>
+        </div>
+    );
 }

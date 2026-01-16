@@ -1,0 +1,141 @@
+.product {
+    /* flex: 4; */
+    padding: 20px;
+}
+
+.productTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.productTitle {}
+
+.productAddButton {
+    width: 80px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: green;
+    font-size: 1rem;
+    transition: all 250ms ease;
+}
+
+.productAddButton:hover {
+    background-color: rgb(0, 99, 0);
+}
+
+.productTop {
+    display: flex;
+}
+
+.productTopLeft,
+.productTopRight {
+    flex: 1;
+}
+
+.productTopRight {
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.productInfoTop {
+    display: flex;
+    align-items: center;
+}
+
+.productInfoImg {
+    width: 120px;
+    margin-right: 20px;
+}
+
+.productName {
+    font-weight: 600;
+}
+
+.productInfoBottom {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.productInfoItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.productInfoKey {
+    font-weight: 600;
+}
+
+.productInfoValue {
+    font-weight: 300;
+}
+
+.productBottom {
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
+
+}
+
+.productForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.productFormLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.productFormLeft>label {
+    color: gray;
+}
+
+.productFormLeft>input {
+    border: none;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.productFormLeft>input:focus {
+    outline: none;
+}
+
+.productFormLeft>select {
+    padding: 5px;
+}
+
+.productFormRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.productUploader {
+    display: flex;
+    align-items: center;
+}
+
+.productUploaderImg {
+    width: 120px;
+}
+
+.productButton {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 215);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+
+.productButton:hover {
+    background-color: rgb(87, 87, 151);
+}

@@ -1,0 +1,17 @@
+.homeWidgets {
+    display: flex;
+    margin: 20px 0;
+}
+
+@media (max-width:1040px) {
+    .homeWidgets {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:800) {
+    .home {
+        width: 100%;
+        background-color: aqua;
+    }
+}
