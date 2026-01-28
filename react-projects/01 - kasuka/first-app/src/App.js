@@ -10,7 +10,7 @@ function App() {
             <MainIntro />
             <Features />
         </div>
-    );
+    )
 }
 
 export default App;
