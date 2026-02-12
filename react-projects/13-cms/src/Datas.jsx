@@ -132,4 +132,4 @@ const productData = [
     },
 ];
 
-export { newMembers, transActions, userRow, products, productData };
+export { xAxisData, newMembers, transActions, userRow, products, productData };

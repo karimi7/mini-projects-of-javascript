@@ -85,7 +85,7 @@ export default function Product() {
                                 alt="profile photo"
                             />
                             <label>
-                                {/* <Publish/> */}
+                                <Publish/>
                                 <input
                                     style={{ display: 'none' }}
                                     type="file"
