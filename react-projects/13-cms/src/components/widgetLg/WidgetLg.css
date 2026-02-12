@@ -46,17 +46,17 @@
     border-radius: 10px;
 }
 
-.widgetLgButton .Approved {
+.widgetLgButton.Approved {
     color: #3bb077;
     background-color: #e5faf2;
 }
 
-.widgetLgButton .Decline {
+.widgetLgButton.Declined {
     color: #d95087;
     background-color: #fff0f1;
 }
 
-.widgetLgButton .Pending {
+.widgetLgButton.Pending {
     color: #2a7ade;
     background-color: #ebf1fe;
 }

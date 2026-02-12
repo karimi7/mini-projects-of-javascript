@@ -1,9 +1,9 @@
 import { React, useState } from 'react';
 import { userRow } from '../../Datas';
 import './UserList.css';
-// import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid } from '@mui/x-data-grid';
 import { Link } from 'react-router';
-// import { width } from '@mui/system';
+import { width } from '@mui/system';
 import { DeleteOutline } from '@mui/icons-material';
 
 export default function UserList() {
@@ -26,7 +26,7 @@ export default function UserList() {
             renderCell: (params) => {
                 console.log(params);
                 return (
-                    <Link to="/" className="link">
+                    <Link to="/" className="user-list">
                         <div className="userListUser">
                             <img
                                 src={params.row.avatar}
@@ -34,7 +34,6 @@ export default function UserList() {
                             />
                             {params.row.username}
                         </div>
-                        <button className="userListEdit">Edit</button>
                     </Link>
                 );
             },
@@ -47,12 +46,12 @@ export default function UserList() {
         {
             field: 'status',
             headerName: 'Status',
-            window: 120,
+            width: 120,
         },
         {
             field: 'transActions',
             headerName: 'TransActions',
-            window: '160',
+            width: '160',
         },
         {
             field: 'action',
@@ -60,29 +59,36 @@ export default function UserList() {
             width: 150,
             renderCell: (params) => {
                 return (
-                    <>
-                        <Link to={`/user/${params.row.id}`} className="link">
+                    <div className="edit-delete">
+                        <Link
+                            to={`/user/${params.row.id}`}
+                            className="user-list"
+                        >
                             <button className="userListEdit">Edit</button>
                         </Link>
                         <DeleteOutline
                             className="userListDelete"
                             onClick={() => userDelete(params.row.id)}
                         />
-                    </>
+                    </div>
                 );
             },
         },
     ];
 
     return (
-        <div className="userList">
-            {/* <DataGrid
+        <div>
+            <DataGrid
                 rows={userDatas}
                 columns={columns}
                 disableSelectionOnClick
-                pageSize={3}
-            /> */}
-            <h1>USERS</h1>
+                initialState={{
+                    pagination: {
+                        paginationModel: { pageSize: 3 },
+                    },
+                }}
+                pageSizeOptions={[3, 5, 10]}
+            />
         </div>
     );
 }
