@@ -1,29 +1,35 @@
-.userList {
-    /* flex: 4; */
-}
+.userList {}
 
-.userListUser{
+.userListUser {
     display: flex;
     align-items: center;
 }
-.userListImg{
+
+.userListImg {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
     object-fit: cover;
 }
-.userListEdit{
+
+.userListEdit {
     border: none;
     border-radius: 10px;
     padding: 5px 10px;
-    color: #fff;
-    background-color: #3bb077;
-    margin-right: 20px;
+    color: #2a7ade;
+    background-color: #ebf1fe;
     cursor: pointer;
 }
 
 .userListDelete {
     color: red;
     cursor: pointer;
+}
+
+.edit-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }

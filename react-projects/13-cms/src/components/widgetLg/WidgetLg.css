@@ -61,6 +61,16 @@
     background-color: #ebf1fe;
 }
 
+@media (max-width:510px) {
+    .widgetLgTable {
+        border-spacing: 5px;
+    }
+
+    .widgetLgUser {
+        flex-direction: column;
+    }
+}
+
 @media (max-width:480px) {
     .widgetLgTh-status {
         display: none;

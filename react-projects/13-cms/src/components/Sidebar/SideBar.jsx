@@ -1,23 +1,20 @@
-import React from 'react';
 import './SideBar.css';
 import {
     LineStyle,
     Timeline,
     TrendingUp,
-    // PremIdentity,
     Storefront,
     AttachMoney,
     BarChart,
     MailOutline,
-    // Messages,
     DynamicFeed,
     ChatBubbleOutline,
     WorkOutline,
     Report,
 } from '@mui/icons-material';
+import PersonIcon from '@mui/icons-material/Person';
+import MessageIcon from '@mui/icons-material/Message';
 import { Link } from 'react-router';
-
-// import Link from 'react-router';
 
 export default function SideBar() {
     return (
@@ -50,8 +47,7 @@ export default function SideBar() {
                     <ul className="sideBarList">
                         <Link to="/users">
                             <li className="sideBarListItem">
-                                {/* change Icon */}
-                                <LineStyle className="sideBarIcon" />
+                                <PersonIcon className="sideBarIcon" />
                                 <div className="item-before">Users</div>
                             </li>
                         </Link>
@@ -59,7 +55,7 @@ export default function SideBar() {
                         <Link to="/newUser">
                             <li className="sideBarListItem">
                                 <Storefront className="sideBarIcon" />
-                                <div className="item-before">New Users</div>
+                                <div>New Users</div>
                             </li>
                         </Link>
 
@@ -93,8 +89,7 @@ export default function SideBar() {
                             Feedback
                         </li>
                         <li className="sideBarListItem">
-                            {/* Change Icon */}
-                            <LineStyle className="sideBarIcon" />
+                            <MessageIcon className="sideBarIcon" />
                             Messages
                         </li>
                     </ul>

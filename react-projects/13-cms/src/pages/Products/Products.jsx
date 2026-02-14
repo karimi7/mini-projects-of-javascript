@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import { products } from '../../Datas';
 import './Products.css';
-// import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid } from '@mui/x-data-grid';
 import { Link } from 'react-router';
-// import { width } from '@mui/system';
+import { width } from '@mui/system';
 import { DeleteOutline } from '@mui/icons-material';
-
 export default function UserList() {
     const [productsData, setProductsData] = useState(products);
 
     const productDelete = (productID) => {
         setProductsData(
-            productsData.filter((product) => product.id != productID)
+            productsData.filter((product) => product.id != productID),
         );
     };
 
@@ -36,7 +35,6 @@ export default function UserList() {
                             />
                             {params.row.title}
                         </div>
-                        <button className="userListEdit">Edit</button>
                     </Link>
                 );
             },
@@ -52,7 +50,7 @@ export default function UserList() {
             width: 150,
             renderCell: (params) => {
                 return (
-                    <>
+                    <div className="edit-delete">
                         <Link to={`/product/${params.row.id}`} className="link">
                             <button className="userListEdit">Edit</button>
                         </Link>
@@ -60,22 +58,25 @@ export default function UserList() {
                             className="userListDelete"
                             onClick={() => productDelete(params.row.id)}
                         />
-                    </>
+                    </div>
                 );
             },
         },
     ];
-
     return (
-        <div className="userList">
-            {/* <DataGrid
+        <div>
+            <DataGrid
                 rows={productsData}
                 columns={columns}
                 disableSelectionOnClick
-                pageSize={3}
+                initialState={{
+                    pagination: {
+                        paginationModel: { pageSize: 3 },
+                    },
+                }}
+                pageSizeOptions={[3, 5, 10]}
                 checkboxSelection
-            /> */}
-            <h1>PRODUCTS</h1>
+            />
         </div>
     );
 }

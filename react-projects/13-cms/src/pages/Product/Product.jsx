@@ -2,7 +2,8 @@ import { Link } from 'react-router';
 import './Product.css';
 import Chart from '../../components/Chart/Chart';
 import { productData } from '../../Datas';
-// import {Publish} from '@mui/material'
+import { height } from '@mui/system';
+import PublishIcon from '@mui/icons-material/Publish';
 
 export default function Product() {
     return (
@@ -27,10 +28,12 @@ export default function Product() {
                     <div className="productInfoTop">
                         <img
                             className="productInfoImg"
-                            src="../public/images/dell.jpg"
-                            alt="dell laptop"
+                            src="/public/images/hp.jpg"
+                            alt="laptop"
                         />
-                        <span className="productName">Dell Laptop</span>
+                        <span className="productName">
+                            <h2>Hp laptop</h2>
+                        </span>
                     </div>
 
                     <div className="productInfoBottom">
@@ -40,7 +43,7 @@ export default function Product() {
                         </div>
                         <div className="productInfoItem">
                             <div className="productInfoKey">Name: </div>
-                            <div className="productInfoValue">Dell Laptop</div>
+                            <div className="productInfoValue">Hp Laptop</div>
                         </div>
                         <div className="productInfoItem">
                             <div className="productInfoKey">Sales: </div>
@@ -51,7 +54,7 @@ export default function Product() {
                             <div className="productInfoValue">Yes</div>
                         </div>
                         <div className="productInfoItem">
-                            <div className="productInfoKey">In Stores: </div>
+                            <div className="productInfoKey">In Store: </div>
                             <div className="productInfoValue">No</div>
                         </div>
                     </div>
@@ -62,7 +65,7 @@ export default function Product() {
                 <form className="productForm">
                     <div className="productFormLeft">
                         <label>Product Name</label>
-                        <input type="text" placeholder="Dell Laptop" />
+                        <input type="text" placeholder="Hp Laptop" />
 
                         <label>In Sales</label>
                         <select id="inStock">
@@ -81,11 +84,11 @@ export default function Product() {
                         <div className="productUploader">
                             <img
                                 className="productUploaderImg"
-                                src="../public/images/dell.jpg"
+                                src="/public/images/hp.jpg"
                                 alt="profile photo"
                             />
                             <label>
-                                <Publish/>
+                                <PublishIcon />
                                 <input
                                     style={{ display: 'none' }}
                                     type="file"

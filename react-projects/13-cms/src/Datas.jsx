@@ -119,10 +119,10 @@ const userRow = [
 ];
 
 const products = [
-    { id: 1, title: 'Hp', price: 890, img: '..public/images/hp.jpg' },
-    { id: 2, title: 'Asus', price: 890, img: '..public/images/asus.jpeg' },
-    { id: 3, title: 'Acer', price: 890, img: '..public/images/acer.jpg' },
-    { id: 4, title: 'Dell', price: 890, img: '..public/images/dell.jpg' },
+    { id: 1, title: 'Hp', price: 890, avatar: 'public/images/hp.jpg' },
+    { id: 2, title: 'Asus', price: 510, avatar: 'public/images/hp.jpg' },
+    { id: 3, title: 'Acer', price: 760, avatar: 'public/images/acer.jpg' },
+    { id: 4, title: 'Dell', price: 630, avatar: 'public/images/acer.jpg' },
 ];
 
 const productData = [
@@ -132,7 +132,7 @@ const productData = [
     },
     {
         name: 'Feb',
-        sales: 3000,
+        sales: 9000,
     },
     {
         name: 'March',

@@ -9,6 +9,16 @@ import { DeleteOutline } from '@mui/icons-material';
 export default function UserList() {
     const [userDatas, setUserDatas] = useState(userRow);
 
+    const [selectProduct,setSelectProduct] = useState(null)
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handlerEdit = product => {
+        setSelectProduct(product)
+        setIsModalOpen(true)
+        console.log('اطلاعات', product);
+        
+    }
+
     const userDelete = (userID) => {
         setUserDatas(userDatas.filter((user) => user.id != userID));
     };
